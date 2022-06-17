@@ -8,7 +8,7 @@
 }
 
 #footer {
-  position: relative;
+  position: sticky;
   bottom: 0px;
   background-color: black;
   font-weight: bold;
