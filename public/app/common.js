@@ -1,49 +1,42 @@
 $(() => {
     // $('#navbar').load('../components/navbar.html', before_start)
     // $('#footer').load('../components/footer.html')
-    if(window.localStorage.username != 'null'){
-        console.log("Normal null")
-        $.get(`/api/login/${window.localStorage.username}`,(user)=>{
-            if(user){
-                $('#navbar').load('../components/navbar.html',before_start)
+    if (window.localStorage.username != null && window.localStorage.username.length == 24) {
+        $.get(`/api/login/${window.localStorage.username}`, (user) => {
+            if (user) {
+                $('#navbar').load('../components/navbar.html', before_start)
                 $('#footer').load('../components/footer.html')
                 $('#content').load('../components/allposts.html')
             }
-            else{
+            else {
                 window.localStorage.username = null
+                $('#navbar').load('../components/title.html')
                 $('#content').load('../components/login.html')
+                $('#footer').load('../components/footer.html')
             }
         })
     }
-    else{
+    else {
+        $('#navbar').load('../components/title.html')
         $('#content').load('../components/login.html')
+        $('#footer').load('../components/footer.html')
     }
 })
 
 function before_start() {
-    $.get(`/api/login/${window.localStorage.username}`,(user)=>{
-        if(user){
-            $('#nav-username').text(user.username)   
+    $.get(`/api/login/${window.localStorage.username}`, (user) => {
+        if (user) {
+            $('#nav-username').text(user.username)
         }
-        else{
+        else {
             window.localStorage.username = null
+            $('#navbar').load('../components/title.html')
             $('#content').load('../components/login.html')
+            $('#footer').load('../components/footer.html')
         }
     })
 }
 
-// function before_start() {
-//     window.curr_user = window.localStorage.user ? JSON.parse(window.localStorage.user) : null;
-//     if (!curr_user) {
-//         $.post('/api/users', {}, (user) => {
-//             if (user) {
-//                 window.localStorage.user = JSON.stringify(user)
-//                 curr_user = user
-//                 $('#nav-username').text(curr_user.username)
-//             }
-//         })
-//     }
-//     else {
-//         $('#nav-username').text(curr_user.username)
-//     }
-// }
+// $(window).on('beforeunload',function(){
+//    window.localStorage.username
+// });

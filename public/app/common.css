@@ -3,6 +3,8 @@
   top: 0px;
   z-index: 5;
   font-family: monospace;
+  height: 10vh;
+  background-color: black;
 }
 
 #footer {
@@ -11,6 +13,7 @@
   background-color: black;
   font-weight: bold;
   color: aliceblue;
+  height: 12vh;
 }
 
 #footer-bg {
@@ -24,6 +27,26 @@
   font-weight: bold;
 }
 
+#my-posts {
+  z-index: -10;
+  font-weight: bold;
+  color: black;
+}
+
+#post-title{
+  color: white;
+  font-size: xx-large
+}
+
+#post-content{
+  font-size: xx-large;
+  background-color: white;
+  min-height: 50vh;
+  color: black;
+  padding: 5vh;
+}
+
+
 #nav-username {
   color: var(--purple);
 }
@@ -33,7 +56,7 @@
 }
 
 #content {
-  height: 90vh;
+  min-height: 78vh;
   background-color: black;
   color: aliceblue;
   font-family: monospace;
@@ -41,19 +64,18 @@
 }
 
 #login {
-  height: 100vh;
   background-color: black;
+  height: 78vh;
+  padding-top: 10vh;
+}
+
+#login2 {
+  background-color: black;
+  height: 20vh;
 }
 
 #form-login {
-  padding-top: 25vh;
-  padding-bottom: 30vh;
-}
-
-@media (max-width: 800px) {
-  #form-login {
-    padding-bottom: 15vh;
-  }
+  min-height: 60vh;
 }
 
 .sign {
@@ -61,18 +83,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 30%;
   background-image: radial-gradient(ellipse 50% 35% at 50% 50%,
       #6b1839,
       transparent);
   transform: translate(-50%, -50%);
   letter-spacing: 2;
   left: 50%;
-  top: 10vh;
+  top: 5vh;
   font-family: "Clip";
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: 6vh;
   color: #ffe6ff;
   text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
     -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,

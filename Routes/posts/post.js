@@ -11,6 +11,19 @@ route.get('/', async (req,res)=>{
     })
 })
 
+route.get('/user/:id',async (req,res)=>{
+    id1 = req.params.id
+    await poetry.findOne({
+        _id: id1
+    })
+    .then((results)=>{
+        res.send(results)
+    })
+    .catch((err)=>{
+        console.log(err)
+    }) 
+})
+
 route.get('/:id',async (req,res)=>{
     id1 = req.params.id
     await poetry.find({

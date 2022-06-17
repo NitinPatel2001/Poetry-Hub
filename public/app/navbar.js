@@ -6,6 +6,6 @@ navlinks.click((ev)=>{
 })
 
 $('#SignOut').click(()=>{
-    window.localStorage.username = null
+    window.localStorage.clear()
     location.reload()
 })

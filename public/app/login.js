@@ -21,11 +21,14 @@ function before_start() {
         }
         else{
             window.localStorage.username = null
+            $('#navbar').load('../components/title.html')
             $('#content').load('../components/login.html')
+            $('#footer').load('../components/footer.html')
         }
     })
 }
 
 $('#signup-submit').click(()=>{
     $('#content').load('../components/signup.html')
+    $('#footer').load('../components/footer.html')
 })
